@@ -5,3 +5,4 @@ module Accession
 end
 
 require 'accession/permission'
+require 'accession/principal'
