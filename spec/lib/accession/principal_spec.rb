@@ -1,9 +1,9 @@
 module Accession
   RSpec.describe Principal do
-    let(:permission_true) { double(permit?: true) }
-    let(:permission_false) { double(permit?: false) }
+    let(:correct_perm) { 'a:*' }
+    let(:other_perm) { 'b:*' }
 
-    matcher(:permit) { match { |a| a.permits?('dummy') } }
+    matcher(:permit) { match { |a| a.permits?('a:b:c') } }
     RSpec::Matchers.define_negated_matcher :deny, :permit
 
     subject do
@@ -19,32 +19,32 @@ module Accession
     end
 
     context 'single permit' do
-      let(:permissions) { [permission_true] }
+      let(:permissions) { [correct_perm] }
       it { is_expected.to permit }
     end
 
     context 'multiple permit' do
-      let(:permissions) { [permission_true, permission_true] }
+      let(:permissions) { [correct_perm, correct_perm] }
       it { is_expected.to permit }
     end
 
     context 'single deny' do
-      let(:permissions) { [permission_false] }
+      let(:permissions) { [other_perm] }
       it { is_expected.to deny }
     end
 
     context 'multiple deny' do
-      let(:permissions) { [permission_false, permission_false] }
+      let(:permissions) { [other_perm, other_perm] }
       it { is_expected.to deny }
     end
 
     context 'deny then permit' do
-      let(:permissions) { [permission_false, permission_true] }
+      let(:permissions) { [other_perm, correct_perm] }
       it { is_expected.to permit }
     end
 
     context 'permit then deny' do
-      let(:permissions) { [permission_true, permission_false] }
+      let(:permissions) { [correct_perm, other_perm] }
       it { is_expected.to permit }
     end
   end
