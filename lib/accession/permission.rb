@@ -1,5 +1,14 @@
 module Accession
   class Permission
+    # A segment is a "word" in the url-safe base64 alphabet, or single '*'
+    SEGMENT = /([\w-]+|\*)/.freeze
+    REGEXP = /\A(#{SEGMENT}:)*#{SEGMENT}\z/.freeze
+    private_constant :SEGMENT, :REGEXP
+
+    def self.regexp
+      REGEXP
+    end
+
     def initialize(value)
       @parts = value.split(':')
     end

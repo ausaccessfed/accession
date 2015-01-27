@@ -58,5 +58,21 @@ module Accession
       denies('a:b:c:e:d')
       denies('a:b:d:c')
     end
+
+    context '::regexp' do
+      subject { Accession::Permission.regexp }
+
+      it { is_expected.to match('*') }
+      it { is_expected.to match('a:b:c:d') }
+      it { is_expected.to match('a:b:c:*') }
+      it { is_expected.to match('a:b:*:d') }
+      it { is_expected.to match('word:word:word:__________') }
+      it { is_expected.to match('*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*:*') }
+      it { is_expected.not_to match('a:b:%') }
+      it { is_expected.not_to match('a:b:%:*') }
+      it { is_expected.not_to match('%') }
+      it { is_expected.not_to match('') }
+      it { is_expected.not_to match("*:*:*:*\n:*:*") }
+    end
   end
 end
