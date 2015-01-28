@@ -1,3 +1,4 @@
+require 'simplecov'
 require 'accession'
 
 RSpec.configure do |config|
