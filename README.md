@@ -4,19 +4,18 @@
 [![Build Status][BS img]][Build Status]
 [![Dependency Status][DS img]][Dependency Status]
 [![Code Climate][CC img]][Code Climate]
-[![Coverage Status][CS img]][Coverage Status]
+[![Coverage Status][CS img]][Code Climate]
 
 [Gem Version]: https://rubygems.org/gems/accession
-[Build Status]: https://travis-ci.org/ausaccessfed/accession
+[Build Status]: https://codeship.com/projects/91206
 [Dependency Status]: https://gemnasium.com/ausaccessfed/accession
 [Code Climate]: https://codeclimate.com/github/ausaccessfed/accession
-[Coverage Status]: https://coveralls.io/r/ausaccessfed/accession
 
 [GV img]: https://img.shields.io/gem/v/accession.svg
-[BS img]: https://img.shields.io/travis/ausaccessfed/accession/develop.svg
-[DS img]: https://img.shields.io/gemnasium/ausaccessfed/accession.svg
+[BS img]: https://img.shields.io/codeship/9f22d070-0cca-0133-3d0f-36a99efb0264/develop.svg
+[DS img]: https://img.shields.io/gemnasium/ausaccessfed/accession/develop.svg
 [CC img]: https://img.shields.io/codeclimate/github/ausaccessfed/accession.svg
-[CS img]: https://img.shields.io/coveralls/ausaccessfed/accession.svg
+[CS img]: https://img.shields.io/codeclimate/coverage/github/ausaccessfed/accession.svg
 
 Extremely lightweight permissions for Ruby applications.
 
