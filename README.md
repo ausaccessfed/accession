@@ -13,7 +13,7 @@
 
 [GV img]: https://img.shields.io/gem/v/accession.svg
 [BS img]: https://img.shields.io/codeship/9f22d070-0cca-0133-3d0f-36a99efb0264/develop.svg
-[DS img]: https://img.shields.io/gemnasium/ausaccessfed/accession/develop.svg
+[DS img]: https://img.shields.io/gemnasium/ausaccessfed/accession.svg
 [CC img]: https://img.shields.io/codeclimate/github/ausaccessfed/accession.svg
 [CS img]: https://img.shields.io/codeclimate/coverage/github/ausaccessfed/accession.svg
 
